@@ -16,7 +16,11 @@ type HomeProps = {
 
 export default function Home(props: HomeProps) {
   return (
-    <h1>Index</h1>
+    <div>
+      <h1>Index</h1>
+      <p>{JSON.stringify(props.episodes)}</p>
+
+    </div>
   );
 }
 
@@ -45,7 +49,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      episodes: data,
+      episodes,
     },
     revalidate: 60 * 60 * 8,
   }
