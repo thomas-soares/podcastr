@@ -7,7 +7,13 @@ import { convertDurationToTimeString } from "../utils/convertDurationToTimeStrin
 type Episodes = {
   id: string;
   title: string;
+  thumbnail: string;
   members: string;
+  publishedAt: string;
+  duration: number;
+  durationAsString: string;
+  description: string;
+  url: string;
 }
 
 type HomeProps = {
