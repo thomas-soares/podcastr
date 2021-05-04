@@ -2,16 +2,35 @@ import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
+
 import { api } from '../../services/api';
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 
-export default function Episode() {
+type Episode = {
+  id: string;
+  title: string;
+  thumbnail: string;
+  members: string;
+  publishedAt: string;
+  description: string;
+  duration: number;
+  durationAsString: string;
+  url: string;
+}
+
+type EpisodeProps = {
+  episode: Episode;
+}
+
+export default function Episode({ episode }: EpisodeProps) {
   const router = useRouter();
 
   return (
     <h1>{router.query.slug}</h1>
   );
 }
+
+
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { slug } = ctx.params;
