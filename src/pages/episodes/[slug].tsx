@@ -1,6 +1,6 @@
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
-import { GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 
 import { api } from '../../services/api';
@@ -30,7 +30,12 @@ export default function Episode({ episode }: EpisodeProps) {
   );
 }
 
-
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: 'blocking'
+  }
+}
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { slug } = ctx.params;
