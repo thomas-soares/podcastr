@@ -76,14 +76,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }
   });
 
-  return {
-    paths: [
-      {
-        params: {
-          slug: 'a-importancia-da-contribuicao-em-open-source'
-        }
+  const paths = data.map(episode => {
+    return {
+      params: {
+        slug: episode.id
       }
-    ],
+    }
+  })
+
+  return {
+    paths,
     fallback: 'blocking'
   }
 }
