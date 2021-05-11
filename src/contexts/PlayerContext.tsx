@@ -51,7 +51,11 @@ export function PlayerContextProvider({ children }: PlayerContextProviderProps) 
   }
 
   function playNext() {
-    setCurrentEpisodeIndex(currentEpisodeIndex + 1);
+    const nextEpisodeIndex = currentEpisodeIndex + 1;
+
+    if (nextEpisodeIndex < episodeList.length) {
+      setCurrentEpisodeIndex(currentEpisodeIndex + 1);
+    }
   }
 
   return (
