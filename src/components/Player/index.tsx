@@ -99,7 +99,7 @@ export function Player() {
             type="button"
             onClick={toggleShuffle}
             className={isShuffling ? styles.IsActive : ''}
-            disabled={!episode}
+            disabled={!episode || episodeList.length === 1}
           >
             <img src="/shuffle.svg" alt="Embaralhar" />
           </button>
