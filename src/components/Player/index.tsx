@@ -17,6 +17,7 @@ export function Player() {
     isPlaying,
     isLooping,
     togglePlay,
+    toggleLoop,
     setPlayingState,
     hasNext,
     hasPrevious,
@@ -112,7 +113,12 @@ export function Player() {
           <button type="button" onClick={playNext} disabled={!episode || hasNext}>
             <img src="/play-next.svg" alt="Tocar próxima" />
           </button>
-          <button type="button" disabled={!episode}>
+          <button
+            type="button"
+            onClick={toggleLoop}
+            className={isLooping ? styles.IsActive : ''}
+            disabled={!episode}
+          >
             <img src="/repeat.svg" alt="Repetir" />
           </button>
         </div>
