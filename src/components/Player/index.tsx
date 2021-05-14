@@ -50,6 +50,11 @@ export function Player() {
     });
   }
 
+  function handleSeek(amount: number) {
+    audioRef.current.currentTime = amount;
+    setProgress(amount);
+  }
+
   const episode = episodeList[currentEpisodeIndex];
 
   return (
