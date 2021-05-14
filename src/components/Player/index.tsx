@@ -46,7 +46,7 @@ export function Player() {
     audioRef.current.currentTime = 0;
 
     audioRef.current.addEventListener('timeupdate', () => {
-      setProgress(audioRef.current.currentTime);
+      setProgress(Math.floor(audioRef.current.currentTime));
     });
   }
 
