@@ -23,6 +23,7 @@ export function Player() {
     toggleLoop,
     toggleShuffle,
     setPlayingState,
+    clearPlayerState,
     hasNext,
     hasPrevious,
     playNext,
