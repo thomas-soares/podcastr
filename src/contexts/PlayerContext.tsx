@@ -20,6 +20,7 @@ type PlayerContextData = {
   toggleLoop: () => void;
   toggleShuffle: () => void;
   setPlayingState: (state: boolean) => void;
+  clearPlayerState: () => void;
   hasNext: boolean;
   hasPrevious: boolean;
   playNext: () => void;
