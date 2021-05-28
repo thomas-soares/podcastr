@@ -56,6 +56,14 @@ export function Player() {
     setProgress(amount);
   }
 
+  function handleEpisodeEnded() {
+    if (hasNext) {
+      playNext();
+    } else {
+      clearPlayerState();
+    }
+  }
+
   const episode = episodeList[currentEpisodeIndex];
 
   return (
