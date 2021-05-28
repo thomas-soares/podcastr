@@ -105,6 +105,7 @@ export function PlayerContextProvider({ children }: PlayerContextProviderProps) 
         toggleLoop,
         toggleShuffle,
         setPlayingState,
+        clearPlayerState,
         hasNext,
         hasPrevious,
         playNext,
